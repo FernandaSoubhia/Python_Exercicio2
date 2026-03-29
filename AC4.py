@@ -48,5 +48,5 @@ else:
         print('Financiamento negado')
     else:
         print(valorparcela)
+        pagojuros=valorfinanciado*juros-valorfinanciado
         print(pagojuros)
-        pagojuros=valorfinanciado*juros
