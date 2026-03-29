@@ -8,18 +8,18 @@
 #- valor da parcela-
 #Regras:
 #1. Entrada mínima:
-#- Se a entrada for menor que 20% do valor do veículo → financiamento negado
-#2. Parcelamento:
-#- Até 24 parcelas → juros de 5%
-#- De 25 a 48 parcelas → juros de 10%
-#- Acima de 48 parcelas → juros de 15%
+#- Se a entrada for menor que 20% do valor do veículo → financiamento negado-
+#2. Parcelamento:-
+#- Até 24 parcelas → juros de 5%-
+#- De 25 a 48 parcelas → juros de 10%-
+#- Acima de 48 parcelas → juros de 15%- 
 #3. Aprovação:
-#- A parcela não pode ultrapassar 30% do salário
-#- Caso ultrapasse → financiamento negado
+#- A parcela não pode ultrapassar 30% do salário-
+#- Caso ultrapasse → financiamento negado-
 #Exiba:
-#- Se o financiamento foi aprovado ou negado
-#- Valor da parcela
-#- Total pago com juros
+#- Se o financiamento foi aprovado ou negado-
+#- Valor da parcela-
+#- Total pago com juros-
  
  
 valorveiculo=int(input('Digite o valor do veículo: '))
@@ -28,8 +28,25 @@ quantparcelas=int(input('Digite a quantidade de parcelas: '))
 salarcomprador=int(input('Digite o salário do comprador: '))
  
 valorfinanciado= valorveiculo-valorentrada
-valorparcela=quantparcelas/valorentrada(valorveiculo-valorentrada)
+valorparcela=quantparcelas/valorfinanciado
 
-if valorentrada<0.20:
-    print('Financiamento negado')
+entra20=valorveiculo*0.2
 
+if entra20>valorveiculo:
+    print('Finaciamento negado')
+else:
+    if valorparcela<=24:
+        juros=0.05
+    elif valorparcela<=48:
+        juros=0.1
+    elif valorparcela<48:
+        juros=0.15
+
+    acima30=salarcomprador*0.3
+
+    if acima30>valorparcela:
+        print('Financiamento negado')
+    else:
+        print(valorparcela)
+        print(pagojuros)
+        pagojuros=valorfinanciado*juros
